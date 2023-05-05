@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Lecture May 1st</title>
     <style source-path="global-text-editor-styles">.mde-cm-wrapper .CodeMirror {
       font-size: 13px;
@@ -736,7 +737,14 @@ body[class*="dark-ui"] .mde-preview .cm-error {
 </style>
   </head>
   <body class="mde-preview">
-    <div><h1 data-line="1" data-line-end="1">Lecture May 1st</h1>
+    <div>
+    <div id="navButton">
+      <h1 >Lecture May 1st <button id="testButton" class="button">Menu</button></h1>
+
+      <button id="menuButton" class="button">Menu</button>
+      <button id="github" class="button"> <a href="https://github.com/david-umd/david-umd.github.io">github</a></button>
+      <button id="inheritanceJump" class="button"> <a href="#inheritancetitle">inheritance</a> </button>
+    </div>
 <h3 data-line="3" data-line-end="3">iterators</h3>
 <ul data-line="4" data-line-end="7">
 <li data-line="4" data-line-end="4"><strong data-line="4" data-line-end="4">since ArrayList is inherited from a class called AbstractList, ArrayLists implement a class called Iterator.</strong></li>
@@ -767,7 +775,7 @@ body[class*="dark-ui"] .mde-preview .cm-error {
 </span></code></pre>
 <p data-line="29" data-line-end="29"><em data-line="29" data-line-end="29">the programmer doesnt have to worry about iterating through the list</em></p>
 <hr data-line="30" data-line-end="30">
-<h3 data-line="31" data-line-end="31">inheritance summary</h3>
+<h3 id="inheritancetitle" data-line="31" data-line-end="31">inheritance summary</h3>
 <ul data-line="32" data-line-end="41">
 <li data-line="32" data-line-end="32">derived or child class comes from parent, base, or super class</li>
 <li data-line="33" data-line-end="33"><code>public class B extends A{...}</code></li>
