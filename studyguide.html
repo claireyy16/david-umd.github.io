@@ -1,0 +1,940 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CMSC131 Final Exam Study Guide</title>
+    <style source-path="global-text-editor-styles">.mde-cm-wrapper .CodeMirror {
+      font-size: 13px;
+      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+    .mde-preview pre code, .mde-preview code {
+      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    }</style><style source-path="global-preview-styles">.mde-preview {
+      font-size: 15px
+    }</style><style source-path="C:\Users\flluu\Downloads\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\export-print\styles\index.css" priority="0">@media print {
+  .mde-preview table {
+    overflow: hidden;
+    word-break: break-word;
+  }
+  .mde-preview pre > code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}
+</style><style source-path="C:\Users\flluu\Downloads\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\import-markdown\styles\select-book-dialog.less" priority="0">.ui.modal.dialog-frame.import-markdown-select-notebook-dialog {
+  min-width: 600px;
+  width: 50vw !important;
+  min-height: 50vh;
+}
+.ui.modal.dialog-frame.import-markdown-select-notebook-dialog .actions {
+  text-align: left;
+}
+</style><style source-path="C:\Users\flluu\Downloads\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\import-html\styles\select-book-dialog.less" priority="0">.ui.modal.dialog-frame.import-html-select-notebook-dialog {
+  min-width: 600px;
+  width: 50vw !important;
+  min-height: 50vh;
+}
+.ui.modal.dialog-frame.import-html-select-notebook-dialog .actions {
+  text-align: left;
+}
+</style><style source-path="C:\Users\flluu\Downloads\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\github-preview\styles\github-markdown.css" context="inkdrop-preview" priority="1">@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.mde-preview {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.mde-preview:before {
+  display: table;
+  content: "";
+}
+.mde-preview:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.mde-preview a {
+  background-color: transparent;
+}
+.mde-preview a:active,
+.mde-preview a:hover {
+  outline: 0;
+}
+.mde-preview strong {
+  font-weight: bold;
+  color: black;
+}
+.mde-preview em {
+  color: black;
+}
+.mde-preview h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.mde-preview img {
+  border: 0;
+}
+.mde-preview hr {
+  box-sizing: content-box;
+  height: 0;
+}
+.mde-preview pre {
+  overflow: auto;
+}
+.mde-preview code,
+.mde-preview kbd,
+.mde-preview pre {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  font-size: 1em;
+}
+.mde-preview input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.mde-preview html input[disabled] {
+  cursor: default;
+}
+.mde-preview input {
+  line-height: normal;
+}
+.mde-preview input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.mde-preview table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.mde-preview td,
+.mde-preview th {
+  padding: 0;
+}
+.mde-preview * {
+  box-sizing: border-box;
+}
+.mde-preview input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.mde-preview a {
+  color: #4078c0;
+  text-decoration: none;
+}
+.mde-preview a:hover,
+.mde-preview a:active {
+  text-decoration: underline;
+}
+.mde-preview hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.mde-preview hr:before {
+  display: table;
+  content: "";
+}
+.mde-preview hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.mde-preview h1,
+.mde-preview h2,
+.mde-preview h3,
+.mde-preview h4,
+.mde-preview h5,
+.mde-preview h6 {
+  margin-top: 0;
+  padding-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.mde-preview h1 {
+  font-size: 30px;
+}
+.mde-preview h2 {
+  font-size: 21px;
+}
+.mde-preview h3 {
+  font-size: 16px;
+}
+.mde-preview h4 {
+  font-size: 14px;
+}
+.mde-preview h5 {
+  font-size: 12px;
+}
+.mde-preview h6 {
+  font-size: 11px;
+}
+.mde-preview blockquote {
+  margin: 0;
+}
+.mde-preview ul,
+.mde-preview ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.mde-preview ol ol,
+.mde-preview ul ol {
+  list-style-type: lower-roman;
+}
+.mde-preview ul ul ol,
+.mde-preview ul ol ol,
+.mde-preview ol ul ol,
+.mde-preview ol ol ol {
+  list-style-type: lower-alpha;
+}
+.mde-preview dd {
+  margin-left: 0;
+}
+.mde-preview code {
+  font-size: 12px;
+}
+.mde-preview pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+.mde-preview .select::-ms-expand {
+  opacity: 0;
+}
+.mde-preview .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.mde-preview .octicon-link:before {
+  content: '\f05c';
+}
+.mde-preview .mde-preview > *:first-child {
+  margin-top: 0 !important;
+}
+.mde-preview .mde-preview > *:last-child {
+  margin-bottom: 0 !important;
+}
+.mde-preview a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+.mde-preview .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+.mde-preview .anchor:focus {
+  outline: none;
+}
+.mde-preview h1 .octicon-link,
+.mde-preview h2 .octicon-link,
+.mde-preview h3 .octicon-link,
+.mde-preview h4 .octicon-link,
+.mde-preview h5 .octicon-link,
+.mde-preview h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+.mde-preview h1:hover .anchor,
+.mde-preview h2:hover .anchor,
+.mde-preview h3:hover .anchor,
+.mde-preview h4:hover .anchor,
+.mde-preview h5:hover .anchor,
+.mde-preview h6:hover .anchor {
+  text-decoration: none;
+}
+.mde-preview h1:hover .anchor .octicon-link,
+.mde-preview h2:hover .anchor .octicon-link,
+.mde-preview h3:hover .anchor .octicon-link,
+.mde-preview h4:hover .anchor .octicon-link,
+.mde-preview h5:hover .anchor .octicon-link,
+.mde-preview h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+.mde-preview h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.mde-preview h1 .anchor {
+  line-height: 1;
+}
+.mde-preview h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.mde-preview h2 .anchor {
+  line-height: 1;
+}
+.mde-preview h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.mde-preview h3 .anchor {
+  line-height: 1.2;
+}
+.mde-preview h4 {
+  font-size: 1.25em;
+}
+.mde-preview h4 .anchor {
+  line-height: 1.2;
+}
+.mde-preview h5 {
+  font-size: 1em;
+}
+.mde-preview h5 .anchor {
+  line-height: 1.1;
+}
+.mde-preview h6 {
+  font-size: 1em;
+  color: #777;
+}
+.mde-preview h6 .anchor {
+  line-height: 1.1;
+}
+.mde-preview p,
+.mde-preview blockquote,
+.mde-preview ul,
+.mde-preview ol,
+.mde-preview dl,
+.mde-preview table,
+.mde-preview pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.mde-preview hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.mde-preview ul,
+.mde-preview ol {
+  padding-left: 2em;
+}
+.mde-preview ul ul,
+.mde-preview ul ol,
+.mde-preview ol ol,
+.mde-preview ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.mde-preview li > p {
+  margin: 0;
+}
+.mde-preview dl {
+  padding: 0;
+}
+.mde-preview dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.mde-preview dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.mde-preview blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.mde-preview blockquote > :first-child {
+  margin-top: 0;
+}
+.mde-preview blockquote > :last-child {
+  margin-bottom: 0;
+}
+.mde-preview table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: keep-all;
+}
+.mde-preview table th {
+  font-weight: bold;
+}
+.mde-preview table th,
+.mde-preview table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.mde-preview table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.mde-preview table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.mde-preview img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+.mde-preview code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.mde-preview code:before,
+.mde-preview code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.mde-preview pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.mde-preview pre {
+  padding: 16px;
+  overflow: auto;
+  word-wrap: normal;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.mde-preview pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.mde-preview pre code:before,
+.mde-preview pre code:after {
+  content: normal;
+}
+.mde-preview kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+.mde-preview .cm-header {
+  color: blue;
+}
+.mde-preview .cm-quote {
+  color: #090;
+  font-style: italic;
+}
+.mde-preview .cm-negative {
+  color: #d44;
+}
+.mde-preview .cm-positive {
+  color: #292;
+}
+.mde-preview .cm-header,
+.mde-preview .cm-strong {
+  font-weight: bold;
+}
+.mde-preview .cm-em {
+  font-style: italic;
+}
+.mde-preview .cm-link {
+  text-decoration: underline;
+}
+.mde-preview .cm-strikethrough {
+  text-decoration: line-through;
+}
+.mde-preview .cm-keyword {
+  color: #333;
+  font-weight: bold;
+}
+.mde-preview .cm-atom {
+  color: #219;
+}
+.mde-preview .cm-number {
+  color: #164;
+}
+.mde-preview .cm-def {
+  color: #00f;
+}
+.mde-preview .cm-property {
+  color: #00c;
+}
+.mde-preview .cm-operator {
+  color: #708;
+}
+.mde-preview .cm-variable-2 {
+  color: #05a;
+}
+.mde-preview .cm-variable-3,
+.mde-preview .cm-s-default .cm-type {
+  color: #085;
+}
+.mde-preview .cm-comment {
+  color: #a50;
+  font-style: italic;
+}
+.mde-preview .cm-string {
+  color: #a11;
+}
+.mde-preview .cm-string-2 {
+  color: #f50;
+}
+.mde-preview .cm-meta {
+  color: #555;
+}
+.mde-preview .cm-qualifier {
+  color: #555;
+}
+.mde-preview .cm-builtin {
+  color: #30a;
+}
+.mde-preview .cm-bracket {
+  color: #997;
+}
+.mde-preview .cm-tag {
+  color: #170;
+}
+.mde-preview .cm-attribute {
+  color: #00c;
+}
+.mde-preview .cm-hr {
+  color: #999;
+}
+.mde-preview .cm-link {
+  color: #00c;
+}
+.mde-preview .cm-error {
+  color: #f00;
+}
+.mde-preview kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+.mde-preview .task-list-item {
+  list-style-type: none;
+}
+.mde-preview .task-list-item + .task-list-item {
+  margin-top: 0px;
+}
+.mde-preview .task-list-item input {
+  /* margin: 0 0.35em 0.25em -1.6em; */
+  vertical-align: middle;
+}
+.mde-preview :checked + .radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+@media print {
+  .mde-preview table {
+    overflow: hidden;
+    word-break: break-word;
+  }
+  .mde-preview pre > code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}
+</style><style source-path="C:\Users\flluu\Downloads\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\github-preview\styles\github-markdown-dark.css" context="inkdrop-preview" priority="1">body[class*="dark-ui"] .mde-preview {
+  color: rgba(255, 255, 255, 0.7);
+}
+body[class*="dark-ui"] .mde-preview a {
+  background-color: transparent;
+}
+body[class*="dark-ui"] .mde-preview img {
+  border: 0;
+}
+body[class*="dark-ui"] .mde-preview input {
+  color: inherit;
+}
+body[class*="dark-ui"] .mde-preview a {
+  color: #6987AF;
+}
+body[class*="dark-ui"] .mde-preview strong,
+body[class*="dark-ui"] .mde-preview em {
+  color: white;
+}
+body[class*="dark-ui"] .mde-preview h1,
+body[class*="dark-ui"] .mde-preview h2,
+body[class*="dark-ui"] .mde-preview h3,
+body[class*="dark-ui"] .mde-preview h4,
+body[class*="dark-ui"] .mde-preview h5,
+body[class*="dark-ui"] .mde-preview h6 {
+  color: rgba(255, 255, 255, 0.875);
+}
+body[class*="dark-ui"] .mde-preview h6 {
+  color: rgba(255, 255, 255, 0.625);
+}
+body[class*="dark-ui"] .mde-preview h1,
+body[class*="dark-ui"] .mde-preview h2 {
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+body[class*="dark-ui"] .mde-preview hr {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+body[class*="dark-ui"] .mde-preview blockquote {
+  color: rgba(255, 255, 255, 0.4);
+  border-left: 4px solid rgba(255, 255, 255, 0.1);
+}
+body[class*="dark-ui"] .mde-preview table th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body[class*="dark-ui"] .mde-preview table th,
+body[class*="dark-ui"] .mde-preview table td {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+body[class*="dark-ui"] .mde-preview table tr {
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+body[class*="dark-ui"] .mde-preview table tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+body[class*="dark-ui"] .mde-preview img {
+  background-color: transparent;
+}
+body[class*="dark-ui"] .mde-preview .highlight pre,
+body[class*="dark-ui"] .mde-preview pre {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+body[class*="dark-ui"] .mde-preview .cm-header {
+  color: #ffcc66;
+}
+body[class*="dark-ui"] .mde-preview .cm-quote {
+  color: #969896;
+  font-style: italic;
+}
+body[class*="dark-ui"] .mde-preview .cm-negative {
+  color: #d44;
+}
+body[class*="dark-ui"] .mde-preview .cm-positive {
+  color: #292;
+}
+body[class*="dark-ui"] .mde-preview .cm-header,
+body[class*="dark-ui"] .mde-preview .cm-strong {
+  font-weight: bold;
+}
+body[class*="dark-ui"] .mde-preview .cm-em {
+  font-style: italic;
+}
+body[class*="dark-ui"] .mde-preview .cm-link {
+  text-decoration: underline;
+}
+body[class*="dark-ui"] .mde-preview .cm-strikethrough {
+  text-decoration: line-through;
+}
+body[class*="dark-ui"] .mde-preview .cm-keyword {
+  color: #cc99cc;
+  font-weight: normal;
+}
+body[class*="dark-ui"] .mde-preview .cm-atom {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-number {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-def {
+  color: #b5bd68;
+}
+body[class*="dark-ui"] .mde-preview .cm-property {
+  color: #b5bd68;
+}
+body[class*="dark-ui"] .mde-preview .cm-operator {
+  color: #cc99cc;
+}
+body[class*="dark-ui"] .mde-preview .cm-variable-2 {
+  color: #4A664A;
+}
+body[class*="dark-ui"] .mde-preview .cm-variable-3,
+body[class*="dark-ui"] .mde-preview .cm-type {
+  color: rgba(255, 255, 255, 0.8);
+}
+body[class*="dark-ui"] .mde-preview .cm-comment {
+  color: #969896;
+  font-style: italic;
+}
+body[class*="dark-ui"] .mde-preview .cm-string {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-string-2 {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-meta {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-qualifier {
+  color: #555;
+}
+body[class*="dark-ui"] .mde-preview .cm-builtin {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-bracket {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-tag {
+  color: #a54543;
+}
+body[class*="dark-ui"] .mde-preview .cm-attribute {
+  color: #fda331;
+}
+body[class*="dark-ui"] .mde-preview .cm-hr {
+  color: #999;
+}
+body[class*="dark-ui"] .mde-preview .cm-link {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-error {
+  color: #f00;
+}
+</style>
+  </head>
+  <body class="mde-preview">
+    <div><h1 data-line="1" data-line-end="1">CMSC131 Final Exam Study Guide</h1>
+<h1 data-line="3" data-line-end="3">Object Oriented Terminology</h1>
+<h3 data-line="4" data-line-end="4">See Abstraction, Polymorphism, Encapsulation, and Inheritance</h3>
+<h4 data-line="6" data-line-end="6">Psuedocode</h4>
+<h1 data-line="8" data-line-end="8">Java Variables and Types</h1>
+<h4 data-line="9" data-line-end="9">Primitive Types:</h4>
+<ol data-line="10" data-line-end="17">
+<li data-line="10" data-line-end="10">byte</li>
+<li data-line="11" data-line-end="11">short</li>
+<li data-line="12" data-line-end="12">int</li>
+<li data-line="13" data-line-end="13">long</li>
+<li data-line="14" data-line-end="14">float</li>
+<li data-line="15" data-line-end="15">double</li>
+<li data-line="16" data-line-end="16">boolean</li>
+<li data-line="17" data-line-end="17">char</li>
+</ol>
+<p data-line="19" data-line-end="19"><strong data-line="19" data-line-end="19">What does it mean to be primitive?</strong></p>
+<p data-line="21" data-line-end="21">If you were to write code like <code>int num = 1</code>, your <code>num</code> variable would be assigned a specific size (32 bits) and can only hold numbers which fit in that size, secondly the data inside of the <code>num</code> variable in memory would represent 1, there is no pointer or place in memory where it points to.</p>
+<h4 data-line="23" data-line-end="23">Reference Types (Non-Primitive):</h4>
+<p data-line="24" data-line-end="24"><em data-line="24" data-line-end="24">there is no fixed number of reference types, you can have an infinite amount so these are some examples of some we've encountered in this class</em></p>
+<ul data-line="26" data-line-end="29">
+<li data-line="26" data-line-end="26">String</li>
+<li data-line="27" data-line-end="27">Scanner</li>
+<li data-line="28" data-line-end="28">ArrayList</li>
+<li data-line="29" data-line-end="29">Object</li>
+</ul>
+<p data-line="31" data-line-end="31"><strong data-line="31" data-line-end="31">What's the difference between Reference vs Primitive Types?</strong></p>
+<p data-line="33" data-line-end="33">Assume we have some Class <code>Student</code> which represents a Student. If I were to say <code>Student david = new Student();</code> that tells Java "I want to allocate space in memory for <code>david</code>, and I want it to <em data-line="33" data-line-end="33">point</em> to a <em data-line="33" data-line-end="33">new</em> <code>Student</code> Object." Reference types are simply variables which hold a <strong data-line="33" data-line-end="33">reference</strong> to something, the type is specified so I can't make my <code>Student david</code> point to a <code>new String</code> since that would be a type mismatch.</p>
+<p data-line="35" data-line-end="35">However, you can point a reference to something which inherits the type on the left, if I had a Class <code>UndergradStudent</code> which inherits/extends <code>Student</code> I will be able to write code such that <code>Student david = new UndergradStudent();</code>. The reason why is because every undergrad is a student, but not every student is an undergrad.</p>
+<p data-line="37" data-line-end="37"><strong data-line="37" data-line-end="37">If the above explanation confuses you, see Inheritance</strong></p>
+<h1 data-line="39" data-line-end="39">Expressions and Side Effects</h1>
+<h1 data-line="40" data-line-end="40">Java Numeric/String/Logical Operators</h1>
+<h4 data-line="42" data-line-end="42">Numeric Operators</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table data-line="44" data-line-end="50"><thead data-line="44" data-line-end="44"><tr data-line="44" data-line-end="44"><th data-line="44" data-line-end="44" style="text-align: center;">Operator</th><th data-line="44" data-line-end="44" style="text-align: center;">Function</th></tr></thead><tbody data-line="46" data-line-end="50"><tr data-line="46" data-line-end="46"><td data-line="46" data-line-end="46" style="text-align: center;">+</td><td data-line="46" data-line-end="46" style="text-align: center;">Adds</td></tr><tr data-line="47" data-line-end="47"><td data-line="47" data-line-end="47" style="text-align: center;">-</td><td data-line="47" data-line-end="47" style="text-align: center;">Subtracts</td></tr><tr data-line="48" data-line-end="48"><td data-line="48" data-line-end="48" style="text-align: center;">/</td><td data-line="48" data-line-end="48" style="text-align: center;">Divides</td></tr><tr data-line="49" data-line-end="49"><td data-line="49" data-line-end="49" style="text-align: center;">*</td><td data-line="49" data-line-end="49" style="text-align: center;">Multiplies</td></tr><tr data-line="50" data-line-end="50"><td data-line="50" data-line-end="50" style="text-align: center;">%</td><td data-line="50" data-line-end="50" style="text-align: center;">Modulus, remainder</td></tr></tbody></table>
+<p data-line="52" data-line-end="52"><em data-line="52" data-line-end="52">Division truncates (gets rid of) the decimal if both operands are integers</em></p>
+<h4 data-line="54" data-line-end="54">String Operators</h4>
+<p data-line="56" data-line-end="56">TBD?</p>
+<h4 data-line="58" data-line-end="58">Logical Operators</h4>
+<p data-line="60" data-line-end="60"><code>&amp;&amp;</code> - AND, both left and right must be true to return true</p>
+<p data-line="63" data-line-end="63"><code>||</code> - OR, either left or right can be true to return true</p>
+<p data-line="65" data-line-end="65"><code>!</code> - NOT, flips true to false, and false to true</p>
+<h1 data-line="66" data-line-end="66">Assignment Operators</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table data-line="67" data-line-end="74"><thead data-line="67" data-line-end="67"><tr data-line="67" data-line-end="67"><th data-line="67" data-line-end="67" style="text-align: center;">Operator</th><th data-line="67" data-line-end="67" style="text-align: center;">Function</th></tr></thead><tbody data-line="69" data-line-end="74"><tr data-line="69" data-line-end="69"><td data-line="69" data-line-end="69" style="text-align: center;">=</td><td data-line="69" data-line-end="69" style="text-align: center;">Sets the value of something</td></tr><tr data-line="70" data-line-end="70"><td data-line="70" data-line-end="70" style="text-align: center;">+=</td><td data-line="70" data-line-end="70" style="text-align: center;">Adds the value to the current value</td></tr><tr data-line="71" data-line-end="71"><td data-line="71" data-line-end="71" style="text-align: center;">-+</td><td data-line="71" data-line-end="71" style="text-align: center;">Subtracts the value from the current value</td></tr><tr data-line="72" data-line-end="72"><td data-line="72" data-line-end="72" style="text-align: center;"><code>*=</code></td><td data-line="72" data-line-end="72" style="text-align: center;">Multiplies the value from the current value</td></tr><tr data-line="73" data-line-end="73"><td data-line="73" data-line-end="73" style="text-align: center;">/=</td><td data-line="73" data-line-end="73" style="text-align: center;">Divides the value from the current value</td></tr><tr data-line="74" data-line-end="74"><td data-line="74" data-line-end="74" style="text-align: center;">%=</td><td data-line="74" data-line-end="74" style="text-align: center;">Finds the modulus of the current value</td></tr></tbody></table>
+<h1 data-line="76" data-line-end="76">Short Circuiting</h1>
+<p data-line="78" data-line-end="78">The idea that Java doesn't need to check something has already been fulfilled.</p>
+<p data-line="81" data-line-end="81"><code>true || false</code> stops checking after the first true, because with the <code>OR</code> operator, you know that if the first operand is true, you don't even need to check the second one to know if the overall will be true</p>
+<p data-line="83" data-line-end="83">This works with <code>AND</code> too but like this, <code>false &amp;&amp; true</code> will not check the right hand operand since it already knows after the <code>false</code> that no matter what is in the right operand is, the <code>AND</code> will evaluate to false.</p>
+<p data-line="85" data-line-end="85">This is why if you have code such that:</p>
+<pre data-line="86" data-line-end="92"><code class="inline cm-s-default"><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">x</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">2</span><span class="">;</span><span class="">
+</span><span class="cm-keyword">if</span><span class="">(</span><span class="cm-atom">true</span><span class=""> </span><span class="cm-operator">||</span><span class=""> </span><span class="cm-variable">x</span><span class="cm-operator">++</span><span class=""> </span><span class="cm-operator">&gt;</span><span class=""> </span><span class="cm-number">5</span><span class="">){</span><span class="">
+</span><span class="">    ...</span><span class="">
+</span><span class="">}  </span><span class="">
+</span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">x</span><span class="">);</span><span class="">
+</span></code></pre>
+<p data-line="93" data-line-end="93">outputs 2, and never 3, even if the <code>x++</code> is a <code>++x</code></p>
+<h1 data-line="94" data-line-end="94">Scanner Class</h1>
+<h1 data-line="95" data-line-end="95">System.out.println() / System.out.print()</h1>
+<h1 data-line="96" data-line-end="96">Conditional Statements</h1>
+<h1 data-line="97" data-line-end="97">Blocks and Scoping</h1>
+<h4 data-line="98" data-line-end="98">Blocks</h4>
+<p data-line="99" data-line-end="99">A block is simply code written inbetween <code>{}</code> (a set of curly braces).</p>
+<p data-line="101" data-line-end="101"><strong data-line="101" data-line-end="101">ex:</strong></p>
+<pre data-line="103" data-line-end="114"><code class="inline cm-s-default"><span class="cm-keyword">public</span><span class=""> </span><span class="cm-keyword">static</span><span class=""> </span><span class="cm-type">void</span><span class=""> </span><span class="cm-def">main</span><span class="">(</span><span class="cm-type">String</span><span class="">[] </span><span class="cm-variable">args</span><span class="">) {</span><span class="">
+</span><span class="">        </span><span class="">
+</span><span class="">        </span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">x</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">10</span><span class="">;</span><span class="">
+</span><span class="">        </span><span class="">
+</span><span class="">        {</span><span class="">
+</span><span class="">            </span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">hidden</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">20</span><span class="">;</span><span class="">
+</span><span class="">        }</span><span class="">
+</span><span class="">        </span><span class="">
+</span><span class="">        </span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">division</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-variable">hidden</span><span class=""> </span><span class="cm-operator">/</span><span class=""> </span><span class="cm-variable">x</span><span class="">;</span><span class="">
+</span><span class="">    }</span><span class="">
+</span></code></pre>
+<p data-line="116" data-line-end="116">In the example above, <code>hidden</code> is inside of a block, which is inside of the <code>main</code> (method) block.</p>
+<h4 data-line="118" data-line-end="118">Scoping</h4>
+<p data-line="120" data-line-end="120">Variables outside of your blocks cannot be seen or accessed. This is the reason why when you write a Class if you have private instance fields/variables you need getters and setters to access them. In the previous example, <code>hidden</code> is hidden from the rest of <code>main</code> since it's in a block.</p>
+<h1 data-line="121" data-line-end="121">Constants</h1>
+<h1 data-line="122" data-line-end="122">Loops (whiles, do whiles, for loops, for-each (enhanced) loops)</h1>
+<h4 data-line="123" data-line-end="123">Pretest vs Post-test:</h4>
+<p data-line="125" data-line-end="125"><strong data-line="125" data-line-end="125">pretest</strong> means the condition is checked <em data-line="125" data-line-end="125">before</em> any iteration is done</p>
+<p data-line="127" data-line-end="127"><strong data-line="127" data-line-end="127">posttest</strong> means the condition is checked <em data-line="127" data-line-end="127">after</em> any iteration is done</p>
+<h4 data-line="129" data-line-end="129">while()</h4>
+<p data-line="131" data-line-end="131">while the condition inside is true, the loop will run, it is <em data-line="131" data-line-end="131">pre-test</em></p>
+<pre data-line="132" data-line-end="137"><code class="inline cm-s-default"><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">;</span><span class="">
+</span><span class="cm-keyword">while</span><span class="">(</span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">&lt;=</span><span class=""> </span><span class="cm-number">10</span><span class="">){</span><span class="">
+</span><span class=""> </span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">i</span><span class="cm-operator">++</span><span class="">);</span><span class="">
+</span><span class="">}  </span><span class="">
+</span></code></pre>
+<p data-line="138" data-line-end="138">this will count to 10.</p>
+<h4 data-line="140" data-line-end="140">do while()</h4>
+<p data-line="142" data-line-end="142">similar to while however it is <em data-line="142" data-line-end="142">posttest</em>, so the do body/block will run at least once </p>
+<pre data-line="144" data-line-end="149"><code class="inline cm-s-default"><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">;</span><span class="">
+</span><span class="cm-keyword">do</span><span class="">{</span><span class="">
+</span><span class="">  </span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">i</span><span class="">);</span><span class="">
+</span><span class="">}</span><span class="cm-keyword">while</span><span class="">(</span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">&gt;</span><span class=""> </span><span class="cm-number">1</span><span class="">);</span><span class="">
+</span></code></pre>
+<p data-line="150" data-line-end="150">the code will print out 0 and then realize that i &gt; 1 (0 &gt; 1) is false and stop there.</p>
+<h1 data-line="151" data-line-end="151">String Class</h1>
+<h1 data-line="153" data-line-end="153">String Class Methods: toLowerCase, toUpperCase, length, charAt, substring, isEmpty</h1>
+<h1 data-line="154" data-line-end="154">Static and Non-Static Methods</h1>
+<h1 data-line="155" data-line-end="155">Constructors</h1>
+<h1 data-line="156" data-line-end="156">Using "this" for classes</h1>
+<h1 data-line="157" data-line-end="157">Instance variables</h1>
+<h1 data-line="158" data-line-end="158">Static variables</h1>
+<h1 data-line="159" data-line-end="159">Get/Set methods</h1>
+<h1 data-line="160" data-line-end="160">How to override the toString() method</h1>
+<h1 data-line="161" data-line-end="161">How to override the equals(Object obj) method</h1>
+<h1 data-line="162" data-line-end="162">switch statement</h1>
+<h1 data-line="163" data-line-end="163">StringBuffer</h1>
+<h1 data-line="164" data-line-end="164">One and Two Dimensional Arrays (of primitives and references)</h1>
+<h1 data-line="165" data-line-end="165">Ternary Operator</h1>
+<h1 data-line="166" data-line-end="166">Exceptions</h1>
+<h1 data-line="167" data-line-end="167">Privacy Leaks</h1>
+<h1 data-line="168" data-line-end="168">Copying Objects: Shallow, Reference, Deep Copying</h1>
+<h1 data-line="169" data-line-end="169">Abstraction</h1>
+<h1 data-line="170" data-line-end="170">Encapsulation</h1>
+<h1 data-line="171" data-line-end="171">Interfaces</h1>
+<h1 data-line="172" data-line-end="172">break and continue</h1>
+<h1 data-line="173" data-line-end="173">Wrappers</h1>
+<h1 data-line="174" data-line-end="174">Stacks</h1>
+<h1 data-line="175" data-line-end="175">ArrayList</h1>
+<h1 data-line="176" data-line-end="176">ArrayList Class Methods: add, get, isEmpty, indexOf, remove, size</h1>
+<h1 data-line="177" data-line-end="177">Comparable Interface (compareTo method)</h1>
+<h1 data-line="178" data-line-end="178">Sorting Data Using Collections.sort()</h1>
+<h1 data-line="179" data-line-end="179">Polymorphism</h1>
+<h1 data-line="180" data-line-end="180">Method Overloading/Overriding</h1>
+<h1 data-line="181" data-line-end="181">Iterators</h1>
+<h1 data-line="182" data-line-end="182">getClass(), instanceof</h1>
+<h1 data-line="183" data-line-end="183">Recursion</h1>
+<h1 data-line="184" data-line-end="184">Integer.parseInt(), Double.parseDouble()</h1>
+<h1 data-line="185" data-line-end="185">Inheritance (extending other classes using "extends")</h1>
+<h1 data-line="186" data-line-end="186">Early and late binding</h1>
+<h1 data-line="187" data-line-end="187">Terms You Need to Know</h1>
+<h3 data-line="188" data-line-end="188">Current Object</h3>
+<h3 data-line="189" data-line-end="189">Index and Indices</h3>
+<h3 data-line="190" data-line-end="190">Instance of a Class</h3>
+<h3 data-line="191" data-line-end="191">Instance Variables</h3>
+<h3 data-line="192" data-line-end="192">Auxiliary / Helper Method</h3></div>
+  </body>
+</html>
