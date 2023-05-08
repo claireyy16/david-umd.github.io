@@ -27,13 +27,15 @@ a.link{
 }
 
 .dropdownContent {
-    border-radius: 5px;
-    border: black;
-    height: 200px;
-    width: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px;
+    border-color: #eee;
+    border-style: solid;
+    width: 230px;
     display: block;
     position: absolute;
-    top: 200px;
+    top: 190px;
     right: 70px;
     background-color: white;
     color: black;
