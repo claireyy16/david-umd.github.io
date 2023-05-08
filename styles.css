@@ -27,10 +27,12 @@ a.link{
 }
 
 .dropdownContent {
+    border-radius: 5px;
+    border: black;
     height: 200px;
     width: 200px;
     display: block;
-    position:absolute;
+    position: absolute;
     top: 200px;
     right: 55px;
     background-color: white;
