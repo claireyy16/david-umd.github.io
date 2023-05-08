@@ -1241,24 +1241,46 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="">        </span><span class="cm-keyword">return</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-type">StringBuffer</span><span class="">(</span><span class="cm-variable">test</span><span class="">);</span><span class="">
 </span><span class="">    }</span><span class="">
 </span></code></pre>
-<h1 data-line="476" data-line-end="476">Copying Objects: Shallow, Reference, Deep Copying</h1>
-<h4 data-line="477" data-line-end="477">Shallow Copying</h4>
-<h4 data-line="479" data-line-end="479">Reference Copying</h4>
-<h4 data-line="482" data-line-end="482">Deep Copying</h4>
-<h1 data-line="485" data-line-end="485">Abstraction</h1>
-<h4 data-line="486" data-line-end="486">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
-<p data-line="488" data-line-end="488">Abstraction is the idea that we do not need to understand how something works or that it is implemented, just that our input generates some output which we want.</p>
-<p data-line="490" data-line-end="491">Sounds abstract here's an example:
+<h1 data-line="476" data-line-end="476">Copying Objects: Reference, Shallow, Deep Copying</h1>
+<h4 data-line="477" data-line-end="477">Reference Copying</h4>
+<p data-line="478" data-line-end="479">When the copy is just of the reference itself, meaning it's the same Object address.
+<strong data-line="479" data-line-end="479">ex:</strong></p>
+<pre data-line="480" data-line-end="483"><code class="inline cm-s-default"><span class="cm-type">int</span><span class="">[] </span><span class="cm-variable">arr1</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-type">int</span><span class="">[] {</span><span class="cm-number">1</span><span class="">,</span><span class="cm-number">2</span><span class="">,</span><span class="cm-number">3</span><span class="">,</span><span class="cm-number">4</span><span class="">,</span><span class="cm-number">5</span><span class="">};</span><span class="">
+</span><span class="cm-type">int</span><span class="">[] </span><span class="cm-variable">arr2</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-variable">arr1</span><span class="">;</span><span class="">
+</span></code></pre>
+<p data-line="485" data-line-end="485">They both reference the same address in memory, so it's more of an aliasing situation, and the changes will be seen by both variables.</p>
+<h4 data-line="487" data-line-end="487">Shallow Copying</h4>
+<p data-line="489" data-line-end="489">This is just when you only have seperation on the first layer, this works fine when you have an Object with immutables, or an array of primitives.</p>
+<p data-line="491" data-line-end="491"><strong data-line="491" data-line-end="491">ex:</strong> (this example is with 2d arrays, and is to demonstrate the shortcomings of shallow copies)</p>
+<pre data-line="492" data-line-end="495"><code class="inline cm-s-default"><span class="cm-type">String</span><span class="">[][] </span><span class="cm-variable">arr1</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-type">String</span><span class="">[][] {{</span><span class="cm-string">"1"</span><span class="">,</span><span class="cm-string">"2"</span><span class="">},{</span><span class="cm-string">"3"</span><span class="">,</span><span class="cm-string">"4"</span><span class="">}}</span><span class="">
+
+</span></code></pre>
+<h4 data-line="497" data-line-end="497">Deep Copying</h4>
+<h1 data-line="500" data-line-end="500">Abstraction</h1>
+<h4 data-line="501" data-line-end="501">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
+<p data-line="503" data-line-end="503">Abstraction is the idea that we do not need to understand how something works or that it is implemented, just that our input generates some output which we want.</p>
+<p data-line="505" data-line-end="506">Sounds abstract here's an example:
 <code>System.out.println();</code></p>
-<p data-line="493" data-line-end="493">We don't know how this method works in its' entirety but we do know that it does something we want it to (output to console).</p>
-<h1 data-line="494" data-line-end="494">Encapsulation</h1>
-<h4 data-line="495" data-line-end="495">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
-<h1 data-line="496" data-line-end="496">Interfaces</h1>
-<h1 data-line="497" data-line-end="497">break and continue</h1>
-<p data-line="498" data-line-end="498">these are control statements (things that alter the flow of logic) which can be used inside of any kind of loop (for, while, do while, etc,.))</p>
-<h4 data-line="500" data-line-end="500">break</h4>
-<p data-line="502" data-line-end="502">this will "<em data-line="502" data-line-end="502">break</em>" out of the closest for loop, so if you have a nested for loop, it will only break out of the innermost for loop.</p>
-<pre data-line="504" data-line-end="513"><code class="inline cm-s-default"><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">x</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-operator">-</span><span class="cm-number">1</span><span class="">;</span><span class="">
+<p data-line="508" data-line-end="508">We don't know how this method works in its' entirety but we do know that it does something we want it to (output to console).</p>
+<h1 data-line="509" data-line-end="509">Encapsulation</h1>
+<h4 data-line="510" data-line-end="510">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
+<p data-line="512" data-line-end="512">Very related to abstraction, however the intent is different, with Encapsulation, the programmer doesn't want the user to know how the method/function works in order to protect the security of it. This is why we need getters and setters.</p>
+<p data-line="514" data-line-end="514"><a href="https://piazza.com/class/ld6hzc2587lx/post/804" data-line="514" data-line-end="514">Read more here, courtesy of Matthew</a>.</p>
+<h1 data-line="515" data-line-end="515">Interfaces</h1>
+<p data-line="516" data-line-end="516">It is a type of abstract class where you have no definition of methods. You cannot instantiate an Interface, it is meant to "group" classes together where they all share a type. If you implement an interface into a class, you MUST satisfy the method headers.</p>
+<pre data-line="518" data-line-end="523"><code class="inline cm-s-default"><span class="cm-keyword">public</span><span class=""> </span><span class="cm-keyword">interface</span><span class=""> </span><span class="cm-def">Animals</span><span class="">{</span><span class="">
+</span><span class="">  </span><span class="cm-keyword">public</span><span class=""> </span><span class="cm-type">String</span><span class=""> </span><span class="cm-variable">getName</span><span class="">();</span><span class="">
+</span><span class="">  </span><span class="cm-keyword">public</span><span class=""> </span><span class="cm-type">String</span><span class=""> </span><span class="cm-variable">getAnimalSpecies</span><span class="">(); </span><span class="">
+</span><span class="">}</span><span class="">
+</span></code></pre>
+<p data-line="524" data-line-end="525">Any class which implements Animals is required to have <code>getName()</code> and <code>getAnimalSpecies()</code>
+however the class gets to choose how they implement it. </p>
+<p data-line="527" data-line-end="527">Interfaces <em data-line="527" data-line-end="527">CANT</em> have instance variables.</p>
+<h1 data-line="529" data-line-end="529">break and continue</h1>
+<p data-line="530" data-line-end="530">these are control statements (things that alter the flow of logic) which can be used inside of any kind of loop (for, while, do while, etc,.))</p>
+<h4 data-line="532" data-line-end="532">break</h4>
+<p data-line="534" data-line-end="534">this will "<em data-line="534" data-line-end="534">break</em>" out of the closest for loop, so if you have a nested for loop, it will only break out of the innermost for loop.</p>
+<pre data-line="536" data-line-end="545"><code class="inline cm-s-default"><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">x</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-operator">-</span><span class="cm-number">1</span><span class="">;</span><span class="">
 </span><span class="cm-keyword">for</span><span class="">(</span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">; </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">&lt;=</span><span class=""> </span><span class="cm-number">10</span><span class="">; </span><span class="cm-variable">i</span><span class="cm-operator">++</span><span class="">){</span><span class="">
 </span><span class="">  </span><span class="cm-keyword">if</span><span class="">(</span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">&gt;</span><span class=""> </span><span class="cm-number">5</span><span class=""> </span><span class="cm-operator">&amp;&amp;</span><span class=""> (</span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">%</span><span class=""> </span><span class="cm-number">2</span><span class="">) </span><span class="cm-operator">==</span><span class=""> </span><span class="cm-number">1</span><span class="">){</span><span class="">
 </span><span class="">    </span><span class="cm-variable">x</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-variable">i</span><span class="">;</span><span class="">
@@ -1267,19 +1289,19 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="">}</span><span class="">
 </span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">x</span><span class="">);</span><span class="">
 </span></code></pre>
-<p data-line="514" data-line-end="514"><em data-line="514" data-line-end="514">as soon as i is greater than 5, and odd it breaks out of the loop, stopping iteration</em></p>
-<h4 data-line="516" data-line-end="516">continue</h4>
-<p data-line="518" data-line-end="518">this will skip the current iteration, at the point in the code where the continue is</p>
-<pre data-line="520" data-line-end="527"><code class="inline cm-s-default"><span class="cm-keyword">for</span><span class="">(</span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">; </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">&lt;=</span><span class=""> </span><span class="cm-number">10</span><span class="">; </span><span class="cm-variable">i</span><span class="cm-operator">++</span><span class="">){</span><span class="">
+<p data-line="546" data-line-end="546"><em data-line="546" data-line-end="546">as soon as i is greater than 5, and odd it breaks out of the loop, stopping iteration</em></p>
+<h4 data-line="548" data-line-end="548">continue</h4>
+<p data-line="550" data-line-end="550">this will skip the current iteration, at the point in the code where the continue is</p>
+<pre data-line="552" data-line-end="559"><code class="inline cm-s-default"><span class="cm-keyword">for</span><span class="">(</span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">; </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">&lt;=</span><span class=""> </span><span class="cm-number">10</span><span class="">; </span><span class="cm-variable">i</span><span class="cm-operator">++</span><span class="">){</span><span class="">
 </span><span class=""> </span><span class="cm-keyword">if</span><span class="">(</span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">%</span><span class=""> </span><span class="cm-number">2</span><span class=""> </span><span class="cm-operator">==</span><span class=""> </span><span class="cm-number">0</span><span class="">){</span><span class="">
 </span><span class="">   </span><span class="cm-keyword">continue</span><span class="">;</span><span class="">
 </span><span class=""> }</span><span class="">
 </span><span class="">  </span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">i</span><span class="">);</span><span class="">
 </span><span class="">}</span><span class="">
 </span></code></pre>
-<p data-line="528" data-line-end="528">this code will print out all of the odd numbers between 0 and 10, notice how we skip the evens using <code>continue</code></p>
-<p data-line="530" data-line-end="530">for while loops it's a little different</p>
-<pre data-line="532" data-line-end="541"><code class="inline cm-s-default"><span class="">        </span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">;</span><span class="">
+<p data-line="560" data-line-end="560">this code will print out all of the odd numbers between 0 and 10, notice how we skip the evens using <code>continue</code></p>
+<p data-line="562" data-line-end="562">for while loops it's a little different</p>
+<pre data-line="564" data-line-end="573"><code class="inline cm-s-default"><span class="">        </span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">;</span><span class="">
 </span><span class="">        </span><span class="cm-keyword">while</span><span class=""> (</span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">&lt;=</span><span class=""> </span><span class="cm-number">10</span><span class="">) {</span><span class="">
 </span><span class="">            </span><span class="cm-keyword">if</span><span class=""> (</span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">%</span><span class=""> </span><span class="cm-number">2</span><span class=""> </span><span class="cm-operator">==</span><span class=""> </span><span class="cm-number">0</span><span class="">) {</span><span class="">
 </span><span class="">                </span><span class="cm-variable">i</span><span class="cm-operator">++</span><span class="">;</span><span class="">
@@ -1288,20 +1310,20 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="">            </span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">i</span><span class="cm-operator">++</span><span class="">);</span><span class="">
 </span><span class="">        }</span><span class="">
 </span></code></pre>
-<p data-line="542" data-line-end="542"><em data-line="542" data-line-end="542">since while loops do not iterate through i automatically, we need to do it before we actually reach the <code>continue</code> line</em></p>
-<h1 data-line="545" data-line-end="545">Wrappers</h1>
-<p data-line="546" data-line-end="546">Some things in Java require reference types, this is where the Wrapper classes for primitive types become useful.</p>
-<p data-line="548" data-line-end="548">We are not allowed to have an <code>ArrayList&lt;int&gt;</code> but we can do <code>ArrayList&lt;Integer&gt;</code> and it will <em data-line="548" data-line-end="548">interact the same way that primitive ints would.</em> Even when an int is expected like in a parameter, it is <strong data-line="548" data-line-end="548">automatically boxed</strong> and <strong data-line="548" data-line-end="548">unboxed</strong> depending on the context.</p>
-<p data-line="550" data-line-end="550">Wrapper classes also have their own methods which can be useful even outside of the wrapper classes themselves, there's a lot of them so if you are curious just google "javadoc {wrapper class name} class"</p>
-<h1 data-line="552" data-line-end="552">Stacks</h1>
-<p data-line="553" data-line-end="553">Abstract data structure where things are stored "on top" of eachother.</p>
-<p data-line="555" data-line-end="555"><code>push()</code> - add to top of stack</p>
-<p data-line="557" data-line-end="557"><code>pop()</code> - remove from the top of stack and return</p>
-<p data-line="559" data-line-end="559"><code>peek()</code> - see what's at the top without removing it</p>
-<p data-line="561" data-line-end="561"><code>isEmpty()</code> - returns true if empty, false if not</p>
-<h1 data-line="563" data-line-end="563">ArrayList</h1>
-<p data-line="564" data-line-end="564">Abstract Data Structure which is very similar to an array, except that it is dynamically sizeable. We don't need to worry about its length.</p>
-<h1 data-line="565" data-line-end="565">ArrayList Class Methods: add, get, isEmpty, indexOf, remove, size</h1>
+<p data-line="574" data-line-end="574"><em data-line="574" data-line-end="574">since while loops do not iterate through i automatically, we need to do it before we actually reach the <code>continue</code> line</em></p>
+<h1 data-line="577" data-line-end="577">Wrappers</h1>
+<p data-line="578" data-line-end="578">Some things in Java require reference types, this is where the Wrapper classes for primitive types become useful.</p>
+<p data-line="580" data-line-end="580">We are not allowed to have an <code>ArrayList&lt;int&gt;</code> but we can do <code>ArrayList&lt;Integer&gt;</code> and it will <em data-line="580" data-line-end="580">interact the same way that primitive ints would.</em> Even when an int is expected like in a parameter, it is <strong data-line="580" data-line-end="580">automatically boxed</strong> and <strong data-line="580" data-line-end="580">unboxed</strong> depending on the context.</p>
+<p data-line="582" data-line-end="582">Wrapper classes also have their own methods which can be useful even outside of the wrapper classes themselves, there's a lot of them so if you are curious just google "javadoc {wrapper class name} class"</p>
+<h1 data-line="584" data-line-end="584">Stacks</h1>
+<p data-line="585" data-line-end="585">Abstract data structure where things are stored "on top" of eachother.</p>
+<p data-line="587" data-line-end="587"><code>push()</code> - add to top of stack</p>
+<p data-line="589" data-line-end="589"><code>pop()</code> - remove from the top of stack and return</p>
+<p data-line="591" data-line-end="591"><code>peek()</code> - see what's at the top without removing it</p>
+<p data-line="593" data-line-end="593"><code>isEmpty()</code> - returns true if empty, false if not</p>
+<h1 data-line="595" data-line-end="595">ArrayList</h1>
+<p data-line="596" data-line-end="596">Abstract Data Structure which is very similar to an array, except that it is dynamically sizeable. We don't need to worry about its length.</p>
+<h1 data-line="597" data-line-end="597">ArrayList Class Methods: add, get, isEmpty, indexOf, remove, size</h1>
 
 
 
@@ -1342,11 +1364,11 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 
 
 
-<table data-line="566" data-line-end="573"><thead data-line="566" data-line-end="566"><tr data-line="566" data-line-end="566"><th data-line="566" data-line-end="566" style="text-align: center;">method</th><th data-line="566" data-line-end="566" style="text-align: center;">return value</th><th data-line="566" data-line-end="566" style="text-align: center;">function</th></tr></thead><tbody data-line="568" data-line-end="573"><tr data-line="568" data-line-end="568"><td data-line="568" data-line-end="568" style="text-align: center;"><code>add()</code></td><td data-line="568" data-line-end="568" style="text-align: center;">boolean</td><td data-line="568" data-line-end="568" style="text-align: center;">adds the parameter into the ArrayList, true if successful, false if fails.</td></tr><tr data-line="569" data-line-end="569"><td data-line="569" data-line-end="569" style="text-align: center;"><code>get(int index)</code></td><td data-line="569" data-line-end="569" style="text-align: center;">E (the type of the ArrayList)</td><td data-line="569" data-line-end="569" style="text-align: center;">retrieve something, doesn't remove it from the list</td></tr><tr data-line="570" data-line-end="570"><td data-line="570" data-line-end="570" style="text-align: center;"><code>isEmpty()</code></td><td data-line="570" data-line-end="570" style="text-align: center;">boolean</td><td data-line="570" data-line-end="570" style="text-align: center;">returns true if empty, false if not</td></tr><tr data-line="571" data-line-end="571"><td data-line="571" data-line-end="571" style="text-align: center;"><code>indexOf(Object o)</code></td><td data-line="571" data-line-end="571" style="text-align: center;">int</td><td data-line="571" data-line-end="571" style="text-align: center;">returns the index when the Object is first found in the list</td></tr><tr data-line="572" data-line-end="572"><td data-line="572" data-line-end="572" style="text-align: center;"><code>remove(int index)</code></td><td data-line="572" data-line-end="572" style="text-align: center;">E (the type of the ArrayList)</td><td data-line="572" data-line-end="572" style="text-align: center;">removes the Object at the index, and returns it.</td></tr><tr data-line="573" data-line-end="573"><td data-line="573" data-line-end="573" style="text-align: center;"><code>size()</code></td><td data-line="573" data-line-end="573" style="text-align: center;">int</td><td data-line="573" data-line-end="573" style="text-align: center;">the number of elements in the ArrayList</td></tr></tbody></table>
-<h1 data-line="575" data-line-end="575">Comparable Interface (compareTo method)</h1>
-<p data-line="576" data-line-end="576">Comarable is an interface which makes you implement compareTo(), this is utilized by a lot of the built in sorting libraries in Java. Such as Collections.sort().</p>
-<p data-line="578" data-line-end="578">How to implement Comparable:</p>
-<pre data-line="579" data-line-end="590"><code class="inline cm-s-default"><span class="cm-comment">//whatever is in the angled brackets (&lt;&gt;) is what the parameter for compareTo is</span><span class="">
+<table data-line="598" data-line-end="605"><thead data-line="598" data-line-end="598"><tr data-line="598" data-line-end="598"><th data-line="598" data-line-end="598" style="text-align: center;">method</th><th data-line="598" data-line-end="598" style="text-align: center;">return value</th><th data-line="598" data-line-end="598" style="text-align: center;">function</th></tr></thead><tbody data-line="600" data-line-end="605"><tr data-line="600" data-line-end="600"><td data-line="600" data-line-end="600" style="text-align: center;"><code>add()</code></td><td data-line="600" data-line-end="600" style="text-align: center;">boolean</td><td data-line="600" data-line-end="600" style="text-align: center;">adds the parameter into the ArrayList, true if successful, false if fails.</td></tr><tr data-line="601" data-line-end="601"><td data-line="601" data-line-end="601" style="text-align: center;"><code>get(int index)</code></td><td data-line="601" data-line-end="601" style="text-align: center;">E (the type of the ArrayList)</td><td data-line="601" data-line-end="601" style="text-align: center;">retrieve something, doesn't remove it from the list</td></tr><tr data-line="602" data-line-end="602"><td data-line="602" data-line-end="602" style="text-align: center;"><code>isEmpty()</code></td><td data-line="602" data-line-end="602" style="text-align: center;">boolean</td><td data-line="602" data-line-end="602" style="text-align: center;">returns true if empty, false if not</td></tr><tr data-line="603" data-line-end="603"><td data-line="603" data-line-end="603" style="text-align: center;"><code>indexOf(Object o)</code></td><td data-line="603" data-line-end="603" style="text-align: center;">int</td><td data-line="603" data-line-end="603" style="text-align: center;">returns the index when the Object is first found in the list</td></tr><tr data-line="604" data-line-end="604"><td data-line="604" data-line-end="604" style="text-align: center;"><code>remove(int index)</code></td><td data-line="604" data-line-end="604" style="text-align: center;">E (the type of the ArrayList)</td><td data-line="604" data-line-end="604" style="text-align: center;">removes the Object at the index, and returns it.</td></tr><tr data-line="605" data-line-end="605"><td data-line="605" data-line-end="605" style="text-align: center;"><code>size()</code></td><td data-line="605" data-line-end="605" style="text-align: center;">int</td><td data-line="605" data-line-end="605" style="text-align: center;">the number of elements in the ArrayList</td></tr></tbody></table>
+<h1 data-line="607" data-line-end="607">Comparable Interface (compareTo method)</h1>
+<p data-line="608" data-line-end="608">Comarable is an interface which makes you implement compareTo(), this is utilized by a lot of the built in sorting libraries in Java. Such as Collections.sort().</p>
+<p data-line="610" data-line-end="610">How to implement Comparable:</p>
+<pre data-line="611" data-line-end="622"><code class="inline cm-s-default"><span class="cm-comment">//whatever is in the angled brackets (&lt;&gt;) is what the parameter for compareTo is</span><span class="">
 </span><span class="cm-keyword">public</span><span class=""> </span><span class="cm-keyword">class</span><span class=""> </span><span class="cm-def">Foo</span><span class=""> </span><span class="cm-keyword">implements</span><span class=""> </span><span class="cm-variable">Comparable</span><span class="cm-operator">&lt;</span><span class="cm-variable">Foo</span><span class="cm-operator">&gt;</span><span class="">{</span><span class="">
 </span><span class="">  </span><span class="">
 </span><span class=""> </span><span class="cm-keyword">public</span><span class=""> </span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">compareTo</span><span class="">(</span><span class="cm-variable">Foo</span><span class=""> </span><span class="cm-variable">bar</span><span class="">){</span><span class="">
@@ -1357,19 +1379,19 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class=""> }</span><span class="">
 </span><span class="">}</span><span class="">
 </span></code></pre>
-<h1 data-line="591" data-line-end="591">Sorting Data Using Collections.sort()</h1>
-<p data-line="592" data-line-end="592">If you have a collection (array, ArrayList, etc,.) of Objects which implement <code>Comparable</code>, you can sort them. The class/structure it is stored in does not have to implement <code>Comparable</code>, but the objects inside do, in order to be compared to one another. </p>
-<p data-line="594" data-line-end="594">If it does not implement <code>Comparable</code>, you cannot use <code>Collections.sort</code></p>
-<h1 data-line="596" data-line-end="596">Polymorphism</h1>
-<h4 data-line="597" data-line-end="597">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
-<h3 data-line="598" data-line-end="598">What is it?</h3>
-<p data-line="599" data-line-end="599">Polymorphism is the idea that something can have many forms, it may sound abstract, and that's because it is, it can be applied to a lot of things in Java. <strong data-line="599" data-line-end="599">See late binding's example</strong> to view how code can produce and call different methods depending on the input, because of inheritance and late binding. </p>
-<p data-line="601" data-line-end="601">Also, very related to the idea of inheritance or implementing, if you have some class <code>Person</code> where <code>Worker</code>, <code>Student</code>, <code>Mother</code> all extend <code>Person</code>. Any code which works for <code>Person</code>, also works for things which extend <code>Person</code>. And even things which extend classes like <code>Worker</code>, <code>Student</code> or <code>Mother</code></p>
-<h1 data-line="602" data-line-end="602">Method Overloading/Overriding</h1>
-<h4 data-line="603" data-line-end="603">Overloading</h4>
-<p data-line="605" data-line-end="605">the idea that Java can differentiate between methods with the same name, but different parameters.</p>
-<p data-line="607" data-line-end="607"><strong data-line="607" data-line-end="607">ex:</strong></p>
-<pre data-line="608" data-line-end="616"><code class="inline cm-s-default"><span class="cm-keyword">public</span><span class=""> </span><span class="cm-type">int</span><span class=""> </span><span class="cm-def">someMethod</span><span class="">(</span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">x</span><span class="">){ </span><span class="">
+<h1 data-line="623" data-line-end="623">Sorting Data Using Collections.sort()</h1>
+<p data-line="624" data-line-end="624">If you have a collection (array, ArrayList, etc,.) of Objects which implement <code>Comparable</code>, you can sort them. The class/structure it is stored in does not have to implement <code>Comparable</code>, but the objects inside do, in order to be compared to one another. </p>
+<p data-line="626" data-line-end="626">If it does not implement <code>Comparable</code>, you cannot use <code>Collections.sort</code></p>
+<h1 data-line="628" data-line-end="628">Polymorphism</h1>
+<h4 data-line="629" data-line-end="629">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
+<h3 data-line="630" data-line-end="630">What is it?</h3>
+<p data-line="631" data-line-end="631">Polymorphism is the idea that something can have many forms, it may sound abstract, and that's because it is, it can be applied to a lot of things in Java. <strong data-line="631" data-line-end="631">See late binding's example</strong> to view how code can produce and call different methods depending on the input, because of inheritance and late binding. </p>
+<p data-line="633" data-line-end="633">Also, very related to the idea of inheritance or implementing, if you have some class <code>Person</code> where <code>Worker</code>, <code>Student</code>, <code>Mother</code> all extend <code>Person</code>. Any code which works for <code>Person</code>, also works for things which extend <code>Person</code>. And even things which extend classes like <code>Worker</code>, <code>Student</code> or <code>Mother</code></p>
+<h1 data-line="634" data-line-end="634">Method Overloading/Overriding</h1>
+<h4 data-line="635" data-line-end="635">Overloading</h4>
+<p data-line="637" data-line-end="637">the idea that Java can differentiate between methods with the same name, but different parameters.</p>
+<p data-line="639" data-line-end="639"><strong data-line="639" data-line-end="639">ex:</strong></p>
+<pre data-line="640" data-line-end="648"><code class="inline cm-s-default"><span class="cm-keyword">public</span><span class=""> </span><span class="cm-type">int</span><span class=""> </span><span class="cm-def">someMethod</span><span class="">(</span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">x</span><span class="">){ </span><span class="">
 </span><span class="">  ...</span><span class="">
 </span><span class="">} </span><span class="">
 
@@ -1377,23 +1399,23 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="">  ...</span><span class="">
 </span><span class="">}</span><span class="">
 </span></code></pre>
-<p data-line="617" data-line-end="617">Java knows which of the two the user is expecting to use based on the arguments they pass in when calling the method, the return type is not relevant for overloading. This is usually done within the same class.</p>
-<h4 data-line="619" data-line-end="619">Overriding</h4>
-<p data-line="620" data-line-end="620">When you replace some inherited method with your own, more specialized version of it. </p>
-<h1 data-line="621" data-line-end="621">Iterators</h1>
-<ul data-line="622" data-line-end="625">
-<li data-line="622" data-line-end="622"><strong data-line="622" data-line-end="622">since ArrayList is inherited from a class called AbstractList, ArrayLists implement a class called Iterator.</strong></li>
-<li data-line="623" data-line-end="624">can call the <code>.iterator()</code> method on classes which implement <em data-line="623" data-line-end="623">Iterable</em>, it should return an <code>Iterator</code> object<ul data-line="624" data-line-end="624">
-<li data-line="624" data-line-end="624">allows you to visit all of the elements inside of a list</li>
+<p data-line="649" data-line-end="649">Java knows which of the two the user is expecting to use based on the arguments they pass in when calling the method, the return type is not relevant for overloading. This is usually done within the same class.</p>
+<h4 data-line="651" data-line-end="651">Overriding</h4>
+<p data-line="652" data-line-end="652">When you replace some inherited method with your own, more specialized version of it. </p>
+<h1 data-line="653" data-line-end="653">Iterators</h1>
+<ul data-line="654" data-line-end="657">
+<li data-line="654" data-line-end="654"><strong data-line="654" data-line-end="654">since ArrayList is inherited from a class called AbstractList, ArrayLists implement a class called Iterator.</strong></li>
+<li data-line="655" data-line-end="656">can call the <code>.iterator()</code> method on classes which implement <em data-line="655" data-line-end="655">Iterable</em>, it should return an <code>Iterator</code> object<ul data-line="656" data-line-end="656">
+<li data-line="656" data-line-end="656">allows you to visit all of the elements inside of a list</li>
 </ul></li>
-<li data-line="625" data-line-end="625">saves the user from having to worry about looping through every element in a list, all we care about is that an <code>Iterator</code> object allows us to go through the list.</li>
+<li data-line="657" data-line-end="657">saves the user from having to worry about looping through every element in a list, all we care about is that an <code>Iterator</code> object allows us to go through the list.</li>
 </ul>
-<ol data-line="626" data-line-end="627">
-<li data-line="626" data-line-end="626"><code>.next()</code> - gives you the next element, and advances the iterator, throws an exception if there is no next element.</li>
-<li data-line="627" data-line-end="627"><code>.hasNext()</code> - true if there is, false if not</li>
+<ol data-line="658" data-line-end="659">
+<li data-line="658" data-line-end="658"><code>.next()</code> - gives you the next element, and advances the iterator, throws an exception if there is no next element.</li>
+<li data-line="659" data-line-end="659"><code>.hasNext()</code> - true if there is, false if not</li>
 </ol>
-<p data-line="629" data-line-end="629"><strong data-line="629" data-line-end="629">ex:</strong> </p>
-<pre data-line="630" data-line-end="643"><code class="inline cm-s-default"><span class="cm-variable">ArrayList</span><span class="cm-operator">&lt;</span><span class="cm-type">String</span><span class="cm-operator">&gt;</span><span class=""> </span><span class="cm-variable">names</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-variable">ArrayList</span><span class="cm-operator">&lt;&gt;</span><span class="">();</span><span class="">
+<p data-line="661" data-line-end="661"><strong data-line="661" data-line-end="661">ex:</strong> </p>
+<pre data-line="662" data-line-end="675"><code class="inline cm-s-default"><span class="cm-variable">ArrayList</span><span class="cm-operator">&lt;</span><span class="cm-type">String</span><span class="cm-operator">&gt;</span><span class=""> </span><span class="cm-variable">names</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-variable">ArrayList</span><span class="cm-operator">&lt;&gt;</span><span class="">();</span><span class="">
 
 </span><span class="cm-variable">names</span><span class="">.</span><span class="cm-variable">add</span><span class="">(</span><span class="cm-string">"John"</span><span class="">);</span><span class="">
 </span><span class="cm-variable">names</span><span class="">.</span><span class="cm-variable">add</span><span class="">(</span><span class="cm-string">"Mary"</span><span class="">);</span><span class="">
@@ -1406,23 +1428,23 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="">   </span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">value</span><span class="">);</span><span class="">
 </span><span class="">}</span><span class="">
 </span></code></pre>
-<p data-line="645" data-line-end="645"><em data-line="645" data-line-end="645">the programmer doesnt have to worry about iterating through the list</em></p>
-<h1 data-line="646" data-line-end="646">getClass(), instanceof</h1>
-<h4 data-line="647" data-line-end="647">getClass()</h4>
-<ul data-line="648" data-line-end="649">
-<li data-line="648" data-line-end="648">this is a method of the Object class</li>
-<li data-line="649" data-line-end="649">returns the Class of the dynamic type</li>
+<p data-line="677" data-line-end="677"><em data-line="677" data-line-end="677">the programmer doesnt have to worry about iterating through the list</em></p>
+<h1 data-line="678" data-line-end="678">getClass(), instanceof</h1>
+<h4 data-line="679" data-line-end="679">getClass()</h4>
+<ul data-line="680" data-line-end="681">
+<li data-line="680" data-line-end="680">this is a method of the Object class</li>
+<li data-line="681" data-line-end="681">returns the Class of the dynamic type</li>
 </ul>
-<h4 data-line="651" data-line-end="651">instanceof</h4>
-<ul data-line="652" data-line-end="654">
-<li data-line="652" data-line-end="652">operator, left hand operand is an instance of the right hand operand (this is what it's checking)</li>
-<li data-line="653" data-line-end="653">boolean return value</li>
-<li data-line="654" data-line-end="654">true if the left hand is part of the same class OR is part of a class which <strong data-line="654" data-line-end="654">EXTENDS</strong> the right hand operand.</li>
+<h4 data-line="683" data-line-end="683">instanceof</h4>
+<ul data-line="684" data-line-end="686">
+<li data-line="684" data-line-end="684">operator, left hand operand is an instance of the right hand operand (this is what it's checking)</li>
+<li data-line="685" data-line-end="685">boolean return value</li>
+<li data-line="686" data-line-end="686">true if the left hand is part of the same class OR is part of a class which <strong data-line="686" data-line-end="686">EXTENDS</strong> the right hand operand.</li>
 </ul>
-<h1 data-line="655" data-line-end="655">Recursion</h1>
-<p data-line="656" data-line-end="656">The idea that a piece of code can call itself and run on itself.</p>
-<p data-line="658" data-line-end="658"><strong data-line="658" data-line-end="658">ex:</strong></p>
-<pre data-line="659" data-line-end="667"><code class="inline cm-s-default"><span class="cm-keyword">public</span><span class=""> </span><span class="cm-keyword">static</span><span class=""> </span><span class="cm-type">int</span><span class=""> </span><span class="cm-def">factorial</span><span class="">(</span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">num</span><span class="">) {</span><span class="">
+<h1 data-line="687" data-line-end="687">Recursion</h1>
+<p data-line="688" data-line-end="688">The idea that a piece of code can call itself and run on itself.</p>
+<p data-line="690" data-line-end="690"><strong data-line="690" data-line-end="690">ex:</strong></p>
+<pre data-line="691" data-line-end="699"><code class="inline cm-s-default"><span class="cm-keyword">public</span><span class=""> </span><span class="cm-keyword">static</span><span class=""> </span><span class="cm-type">int</span><span class=""> </span><span class="cm-def">factorial</span><span class="">(</span><span class="cm-type">int</span><span class=""> </span><span class="cm-variable">num</span><span class="">) {</span><span class="">
 </span><span class="">        </span><span class="cm-keyword">if</span><span class="">(</span><span class="cm-variable">num</span><span class=""> </span><span class="cm-operator">==</span><span class=""> </span><span class="cm-number">0</span><span class="">) {</span><span class="">
 </span><span class="">            </span><span class="cm-keyword">return</span><span class=""> </span><span class="cm-number">1</span><span class="">;</span><span class="">
 </span><span class="">        }</span><span class="cm-keyword">else</span><span class=""> {</span><span class="">
@@ -1430,44 +1452,44 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="">        }</span><span class="">
 </span><span class="">    }</span><span class="">
 </span></code></pre>
-<p data-line="669" data-line-end="669">the <code>if(num -- 0)</code> is the base case, or when your code is supposed to stop.</p>
-<p data-line="671" data-line-end="671">the else block is when the call is made to the function, passing in the value below the current integer, this is important because otherwise it would be an infinite loop of calling the method.</p>
-<p data-line="673" data-line-end="674">if you want more coverage on this, check the <a href="http://www.cs.umd.edu/class/spring2023/cmsc131/exams/final/" data-line="673" data-line-end="673">final exam info page</a>, <a href="http://www.cs.umd.edu/class/spring2023/cmsc131/schedule.shtml" data-line="673" data-line-end="673">schedule for recursion practices</a>, or
-<a href="https://piazza.com/class/ld6hzc2587lx/post/921" data-line="674" data-line-end="674">this piazza post</a>.</p>
-<h1 data-line="675" data-line-end="675">Integer.parseInt(), Double.parseDouble()</h1>
-<p data-line="677" data-line-end="678"><code>Integer.parseInt(String s)</code> - takes some string s and parses it into an integer.
-<code>Double.parseDouble(String s )</code> - takes some string s and parses (processes) it into a double.</p>
-<h1 data-line="679" data-line-end="679">Inheritance (extending other classes using "extends")</h1>
-<h4 data-line="680" data-line-end="680">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
-<p data-line="681" data-line-end="682"> inheritance is when the derived or child class extends from parent, base, or super class (these all mean the same thing
+<p data-line="701" data-line-end="701">the <code>if(num -- 0)</code> is the base case, or when your code is supposed to stop.</p>
+<p data-line="703" data-line-end="703">the else block is when the call is made to the function, passing in the value below the current integer, this is important because otherwise it would be an infinite loop of calling the method.</p>
+<p data-line="705" data-line-end="706">if you want more coverage on this, check the <a href="http://www.cs.umd.edu/class/spring2023/cmsc131/exams/final/" data-line="705" data-line-end="705">final exam info page</a>, <a href="http://www.cs.umd.edu/class/spring2023/cmsc131/schedule.shtml" data-line="705" data-line-end="705">schedule for recursion practices</a>, or
+<a href="https://piazza.com/class/ld6hzc2587lx/post/921" data-line="706" data-line-end="706">this piazza post</a>.</p>
+<h1 data-line="707" data-line-end="707">Integer.parseInt(), Double.parseDouble()</h1>
+<p data-line="709" data-line-end="710"><code>Integer.parseInt(String s)</code> - takes some string s and parses it into an integer.
+<code>Double.parseDouble(String s)</code> - takes some string s and parses (processes) it into a double.</p>
+<h1 data-line="711" data-line-end="711">Inheritance (extending other classes using "extends")</h1>
+<h4 data-line="712" data-line-end="712">⚠️ 1 of the 4 pillars of Object Oriented Programming</h4>
+<p data-line="713" data-line-end="714"> inheritance is when the derived or child class extends from parent, base, or super class (these all mean the same thing
 )</p>
-<ul data-line="683" data-line-end="691">
-<li data-line="683" data-line-end="683"><code>public class B extends A{...}</code></li>
-<li data-line="684" data-line-end="686">child class <em data-line="684" data-line-end="684">inherits</em> the following: <ul data-line="685" data-line-end="686">
-<li data-line="685" data-line-end="685">instance variables</li>
-<li data-line="686" data-line-end="686">methods</li>
+<ul data-line="715" data-line-end="723">
+<li data-line="715" data-line-end="715"><code>public class B extends A{...}</code></li>
+<li data-line="716" data-line-end="718">child class <em data-line="716" data-line-end="716">inherits</em> the following: <ul data-line="717" data-line-end="718">
+<li data-line="717" data-line-end="717">instance variables</li>
+<li data-line="718" data-line-end="718">methods</li>
 </ul></li>
-<li data-line="687" data-line-end="687">can define own instance vars and methods</li>
-<li data-line="688" data-line-end="689">child can use <code>super()</code> to call the parent/super class's constructor<ul data-line="689" data-line-end="689">
-<li data-line="689" data-line-end="689">even if you don't include it in your constructor there is an <strong data-line="689" data-line-end="689">implicit</strong> call to the <code>super()</code> constructor</li>
+<li data-line="719" data-line-end="719">can define own instance vars and methods</li>
+<li data-line="720" data-line-end="721">child can use <code>super()</code> to call the parent/super class's constructor<ul data-line="721" data-line-end="721">
+<li data-line="721" data-line-end="721">even if you don't include it in your constructor there is an <strong data-line="721" data-line-end="721">implicit</strong> call to the <code>super()</code> constructor</li>
 </ul></li>
-<li data-line="690" data-line-end="690">also use <code>super</code> to call methods from the base class, such as <code>super.toString()</code></li>
-<li data-line="691" data-line-end="691">a reference to a child can be used anywhere where the parent is expected, but not the other way around</li>
+<li data-line="722" data-line-end="722">also use <code>super</code> to call methods from the base class, such as <code>super.toString()</code></li>
+<li data-line="723" data-line-end="723">a reference to a child can be used anywhere where the parent is expected, but not the other way around</li>
 </ul>
-<p data-line="693" data-line-end="693"><code>Person p = new Student()</code> but don't do <code>Student p = new Person()</code></p>
-<h3 data-line="695" data-line-end="695">class hierarchy and Object class</h3>
-<ul data-line="696" data-line-end="701">
-<li data-line="696" data-line-end="701"><strong data-line="696" data-line-end="696">every class is indirectly or directly a child of Object</strong><ul data-line="697" data-line-end="701">
-<li data-line="697" data-line-end="697"><em data-line="697" data-line-end="697">classes which extend nothing implicitly extend Object</em></li>
-<li data-line="698" data-line-end="698">this is why we wrote our equals method for an <code>Object</code> type, so we could compare it to any Object.</li>
-<li data-line="699" data-line-end="699">having the <code>Object</code> parameter is powerful as any class can be input there.</li>
-<li data-line="700" data-line-end="700"><code>@Override</code> tells the compiler that it should expect to be overriding a method from some parent class</li>
-<li data-line="701" data-line-end="701"><code>Object.getClass()</code> is a <code>final</code> method, so we are not allowed to overwrite it for any class</li>
+<p data-line="725" data-line-end="725"><code>Person p = new Student()</code> but don't do <code>Student p = new Person()</code></p>
+<h3 data-line="727" data-line-end="727">class hierarchy and Object class</h3>
+<ul data-line="728" data-line-end="733">
+<li data-line="728" data-line-end="733"><strong data-line="728" data-line-end="728">every class is indirectly or directly a child of Object</strong><ul data-line="729" data-line-end="733">
+<li data-line="729" data-line-end="729"><em data-line="729" data-line-end="729">classes which extend nothing implicitly extend Object</em></li>
+<li data-line="730" data-line-end="730">this is why we wrote our equals method for an <code>Object</code> type, so we could compare it to any Object.</li>
+<li data-line="731" data-line-end="731">having the <code>Object</code> parameter is powerful as any class can be input there.</li>
+<li data-line="732" data-line-end="732"><code>@Override</code> tells the compiler that it should expect to be overriding a method from some parent class</li>
+<li data-line="733" data-line-end="733"><code>Object.getClass()</code> is a <code>final</code> method, so we are not allowed to overwrite it for any class</li>
 </ul></li>
 </ul>
-<h1 data-line="703" data-line-end="703">Early and late binding</h1>
-<p data-line="704" data-line-end="704">  lets say that you have this code</p>
-<pre data-line="706" data-line-end="714"><code class="inline cm-s-default"><span class="cm-variable">Faculty</span><span class=""> </span><span class="cm-variable">carol</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-variable">Faculty</span><span class="">(</span><span class="cm-string">"Carol Huffteacher"</span><span class="">, </span><span class="">
+<h1 data-line="735" data-line-end="735">Early and late binding</h1>
+<p data-line="736" data-line-end="736">  lets say that you have this code</p>
+<pre data-line="738" data-line-end="746"><code class="inline cm-s-default"><span class="cm-variable">Faculty</span><span class=""> </span><span class="cm-variable">carol</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-variable">Faculty</span><span class="">(</span><span class="cm-string">"Carol Huffteacher"</span><span class="">, </span><span class="">
 </span><span class="">                           </span><span class="cm-string">"999-99-9999"</span><span class="">, </span><span class="cm-number">1995</span><span class="">);</span><span class="">
 </span><span class="cm-variable">Person</span><span class=""> </span><span class="cm-variable">p</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-variable">carol</span><span class="">;</span><span class="">
 </span><span class="cm-variable">System</span><span class="">.</span><span class="cm-variable">out</span><span class="">.</span><span class="cm-variable">println</span><span class="">(</span><span class="cm-variable">carol</span><span class="">.</span><span class="cm-variable">toString</span><span class="">());</span><span class="">
@@ -1475,22 +1497,22 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="cm-comment">//which toString will be called?</span><span class="">
 
 </span></code></pre>
-<p data-line="715" data-line-end="715"><em data-line="715" data-line-end="715">the answer depends on the language you are writing code on, obviously in this class we are dealing with Java</em></p>
-<p data-line="717" data-line-end="717"><strong data-line="717" data-line-end="717">Early (Static) binding</strong> - <code>p</code> is type <code>Person</code>, therefore it should call the <code>Person</code>'s class <code>toString()</code></p>
-<p data-line="719" data-line-end="719"><strong data-line="719" data-line-end="719">Late (Dynamic) binding</strong> - <code>p</code> refers to an <code>Object</code> of type <code>Faculty</code> so it should call the <code>toString()</code> of that class.</p>
-<p data-line="721" data-line-end="721">why do the creators of these languages choose between these two?</p>
-<ul data-line="722" data-line-end="723">
-<li data-line="722" data-line-end="722">early binding is more efficient, decision is made at compile instead of runtime</li>
-<li data-line="723" data-line-end="723">late binding allows for more flexibility in your code/language</li>
+<p data-line="747" data-line-end="747"><em data-line="747" data-line-end="747">the answer depends on the language you are writing code on, obviously in this class we are dealing with Java</em></p>
+<p data-line="749" data-line-end="749"><strong data-line="749" data-line-end="749">Early (Static) binding</strong> - <code>p</code> is type <code>Person</code>, therefore it should call the <code>Person</code>'s class <code>toString()</code></p>
+<p data-line="751" data-line-end="751"><strong data-line="751" data-line-end="751">Late (Dynamic) binding</strong> - <code>p</code> refers to an <code>Object</code> of type <code>Faculty</code> so it should call the <code>toString()</code> of that class.</p>
+<p data-line="753" data-line-end="753">why do the creators of these languages choose between these two?</p>
+<ul data-line="754" data-line-end="755">
+<li data-line="754" data-line-end="754">early binding is more efficient, decision is made at compile instead of runtime</li>
+<li data-line="755" data-line-end="755">late binding allows for more flexibility in your code/language</li>
 </ul>
-<p data-line="725" data-line-end="725"><strong data-line="725" data-line-end="725">java uses late binding by default but it can be changed.</strong> </p>
-<p data-line="727" data-line-end="727">other languages like C++ use early binding (by default), for our example that means the <code>Faculty.toString()</code> is what is called.</p>
-<h3 data-line="729" data-line-end="729">polymorphism as it pertains to binding</h3>
-<ul data-line="730" data-line-end="730">
-<li data-line="730" data-line-end="730">b/c Java is a late binding language, it's possible for a single variable to refer to Objects of different types, sound familiar? That's right, <strong data-line="730" data-line-end="730">polymorphism!</strong></li>
+<p data-line="757" data-line-end="757"><strong data-line="757" data-line-end="757">java uses late binding by default but it can be changed.</strong> </p>
+<p data-line="759" data-line-end="759">other languages like C++ use early binding (by default), for our example that means the <code>Faculty.toString()</code> is what is called.</p>
+<h3 data-line="761" data-line-end="761">polymorphism as it pertains to binding</h3>
+<ul data-line="762" data-line-end="762">
+<li data-line="762" data-line-end="762">b/c Java is a late binding language, it's possible for a single variable to refer to Objects of different types, sound familiar? That's right, <strong data-line="762" data-line-end="762">polymorphism!</strong></li>
 </ul>
-<p data-line="732" data-line-end="732"><strong data-line="732" data-line-end="732">ex:</strong></p>
-<pre data-line="734" data-line-end="748"><code class="inline cm-s-default"><span class="">
+<p data-line="764" data-line-end="764"><strong data-line="764" data-line-end="764">ex:</strong></p>
+<pre data-line="766" data-line-end="780"><code class="inline cm-s-default"><span class="">
 </span><span class="cm-variable">Person</span><span class="">[] </span><span class="cm-variable">list</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-variable">Person</span><span class="">[</span><span class="cm-number">3</span><span class="">];</span><span class="">
 </span><span class="cm-variable">list</span><span class="">[</span><span class="cm-number">0</span><span class="">] </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-variable">Person</span><span class="">(</span><span class="cm-string">"Col. Mustard"</span><span class="">, </span><span class="cm-string">"000-00-0000"</span><span class="">);</span><span class="">
 </span><span class="cm-variable">list</span><span class="">[</span><span class="cm-number">1</span><span class="">] </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-keyword">new</span><span class=""> </span><span class="cm-variable">Student</span><span class="">(</span><span class="cm-string">"Ms. Scarlet"</span><span class="">, </span><span class="cm-string">"111-11-1111"</span><span class="">, </span><span class="cm-number">1998</span><span class="">, </span><span class="cm-number">3.2</span><span class="">);</span><span class="">
@@ -1504,12 +1526,20 @@ They follow this format: <code>boolean ? if true : if false</code>.</p>
 </span><span class="cm-comment">*so the student will have their gpa printed out</span><span class="">
 </span><span class="cm-comment">*/</span><span class="">
 </span></code></pre>
-<p data-line="749" data-line-end="749"><em data-line="749" data-line-end="749">polymorphism (here) is the idea that the output of the code has many forms as in, it will output different things depending on the input. if it was early binding, you wouldn't print out the gpa or birthyear/admission for Student and Faculty</em></p>
-<h1 data-line="751" data-line-end="751">Terms You Need to Know</h1>
-<h3 data-line="752" data-line-end="752">Current Object</h3>
-<h3 data-line="753" data-line-end="753">Index and Indices</h3>
-<h3 data-line="754" data-line-end="754">Instance of a Class</h3>
-<h3 data-line="755" data-line-end="755">Instance Variables</h3>
-<h3 data-line="756" data-line-end="756">Auxiliary / Helper Method</h3></div>
+<p data-line="781" data-line-end="781"><em data-line="781" data-line-end="781">polymorphism (here) is the idea that the output of the code has many forms as in, it will output different things depending on the input. if it was early binding, you wouldn't print out the gpa or birthyear/admission for Student and Faculty</em></p>
+<h1 data-line="783" data-line-end="783">Terms You Need to Know</h1>
+<h3 data-line="784" data-line-end="784">Current Object</h3>
+<p data-line="785" data-line-end="785">Refers to "this", the object which is calling a non-static method.</p>
+<h3 data-line="786" data-line-end="786">Index and Indices</h3>
+<p data-line="787" data-line-end="787">Index refers to the way elements in an array or other structure are numbered. 0-based indexing is usually the assumed default, meaning counting starts at 0 and not 1. Indicies refers to multiple index. </p>
+<h3 data-line="788" data-line-end="788">Instance of a Class</h3>
+<p data-line="789" data-line-end="789">An <code>instance</code> is derived from a <code>Class</code>, it's not a type or anything, it's vocabulary for saying like Object from a class. </p>
+<h3 data-line="790" data-line-end="790">Instance Variables</h3>
+<p data-line="791" data-line-end="791">These are the same as fields, instance fields, these all refer to variables that belong to an instance/object of a class. They are unique to each instance of a class and do not conflict.</p>
+<h3 data-line="792" data-line-end="792">Auxiliary / Helper Method</h3>
+<h4 data-line="793" data-line-end="793">Auxiliary Method</h4>
+<p data-line="794" data-line-end="794">this is very commonly used when you want to expand the parameters in a recursive function. Imagine you are writing a method to reverse a String recursively, and you have a method header like <code>public static String reverseString(String s)</code>, in order for this to work recursively, you <em data-line="794" data-line-end="794">CAN</em> have an auxiliary method which keeps track of the <code>index</code>. (For this problem you can just use String.subString(), auxiliary methods aren't required). The method header would look something like this <code>private static String reverseString(String s, int index)</code>, having it private is important because we don't want users calling it, only the public method.</p>
+<h4 data-line="796" data-line-end="796">Helper Method</h4>
+<p data-line="797" data-line-end="797">This is when you want to put some part of the work in a different method, either to avoid code duplication accross methods or to have a cleaner method body. </p></div>
   </body>
 </html>
