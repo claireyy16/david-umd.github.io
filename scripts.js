@@ -16,3 +16,14 @@ function backToTop(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+let dropdown = document.getElementById("dropClick");
+let menu = document.getElementById("dropdown");
+
+function dropClick(){
+    if (menu.style.display == "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
