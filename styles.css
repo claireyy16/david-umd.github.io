@@ -15,20 +15,29 @@
     color: white;
 }
 
-#testButton {
-    float: right;
-    margin-right: 100px;
-}
-
-/*shadow on hover or color?*/
-#testButton:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
 a.link{
     color: white;
     text-decoration: none;
 }
+
+#dropdownButton {
+    position:absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.dropdownContent {
+    height: 200px;
+    width: 200px;
+    display: block;
+    position:absolute;
+    top: 200px;
+    right: 55px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+}
+
 
 #scrollButton {
     display: none; 
